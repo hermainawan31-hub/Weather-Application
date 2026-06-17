@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+    <div class="heading">
+        <p>Weather App</p>
+    </div>
+
+    <div class="weather-container">
+
+        <div class="top-bar">
+            <h3 id="location">Loading...</h3>
+            
+            <div class="top-right-actions">
+                <div class="search-box">
+                    <input id="cityInput" type="text" placeholder="Enter City Name">
+                    <span onclick="searchCity()" style="cursor: pointer;">🔍</span>
+                </div>
+                
+                <div class="profile-avatar" onclick="toggleSidebar()">
+                    <img id="userAvatar" src="j.jpg">
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <div class="weather-info">
+                <div class="icon" id="main-icon">☀️</div>
+                <h2 id="temp">--°</h2>
+                <p id="locationText">Loading...</p>
+            </div>
+            <div class="sunset">
+                <p id="wind">-- km/h</p>
+                <span>Wind Speed</span>
+            </div>
+        </div>
+
+        <div class="bottom-section">
+            <div class="left-cards">
+                <div class="small-card">
+                    <h4>Humidity</h4>
+                    <p id="humidity">--%</p>
+                </div>
+                <div class="small-card">
+                    <h4>Sunset</h4>
+                    <p id="sunset-time">--:--</p>
+                </div>
+                <div class="small-card">
+                    <h4>UV Index</h4>
+                    <p id="uv-index">--</p>
+                </div>
+                <div class="small-card">
+                    <h4>Sunrise</h4>
+                    <p id="sunrise-time">--:--</p>
+                </div>
+                <div class="rain-card">
+                    <div>
+                        <h4>Max Rain Chance</h4>
+                        <p id="rain-chance">--%</p>
+                    </div>
+                    <div>
+                        <h4>This Year</h4>
+                        <p>+10%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h4>7-Day Weather Forecast</h4>
+                <div class="days" id="days-forecast">
+                    <div>Mon<br>--°</div>
+                    <div>Tue<br>--°</div>
+                    <div>Wed<br>--°</div>
+                    <div>Thu<br>--°</div>
+                    <div>Fri<br>--°</div>
+                    <div>Sat<br>--°</div>
+                    <div>Sun<br>--°</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="sideMenu" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Account Settings</h3>
+            <span class="close-btn" onclick="toggleSidebar()">×</span>
+        </div>
+        <ul class="sidebar-options">
+            <li onclick="alert('Change profile picture clicked!')">📸 Change Profile Pic</li>
+            <li onclick="alert('Change name clicked!')">✏️ Change Name</li>
+            <li onclick="alert('Redirecting to login...')">🔑 Log In</li>
+        </ul>
+    </div>
+
+    <script src="Func2.js"></script>
+
+</body>
+</html>
