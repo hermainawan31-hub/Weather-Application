@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <link rel="stylesheet" href="style2.css">
 </head>
 
@@ -19,13 +25,18 @@
             <h3 id="location">Loading...</h3>
             
             <div class="top-right-actions">
-                <div class="search-box">
-                    <input id="cityInput" type="text" placeholder="Enter City Name">
-                    <span onclick="searchCity()" style="cursor: pointer;">🔍</span>
+                <div class="search-wrapper">
+                    <div class="search-box">
+                        <input id="cityInput" type="text" placeholder="Search city..." autocomplete="off">
+                    </div>
+                    <button class="search-btn" onclick="searchCity()">🔍</button>
                 </div>
                 
-                <div class="profile-avatar" onclick="toggleSidebar()">
-                    <img id="userAvatar" src="j.jpg">
+               <div class="profile-section" onclick="toggleSidebar()">
+                    <div class="profile-avatar">
+                        <img id="userAvatar" src="j.jpg">
+                    </div>
+                 
                 </div>
             </div>
         </div>
@@ -73,16 +84,12 @@
             </div>
 
             <div class="chart-card">
-                <h4>7-Day Weather Forecast</h4>
-                <div class="days" id="days-forecast">
-                    <div>Mon<br>--°</div>
-                    <div>Tue<br>--°</div>
-                    <div>Wed<br>--°</div>
-                    <div>Thu<br>--°</div>
-                    <div>Fri<br>--°</div>
-                    <div>Sat<br>--°</div>
-                    <div>Sun<br>--°</div>
+                <h4>Temperature Trends & Forecast</h4>
+                <div class="chart-container">
+                    <canvas id="forecastChart"></canvas>
                 </div>
+                
+                <div class="chart-forecast-footer" id="chartForecastFooter"></div>
             </div>
         </div>
 
@@ -95,8 +102,7 @@
         </div>
         <ul class="sidebar-options">
             <li onclick="alert('Change profile picture clicked!')">📸 Change Profile Pic</li>
-            <li onclick="alert('Change name clicked!')">✏️ Change Name</li>
-            <li onclick="alert('Redirecting to login...')">🔑 Log In</li>
+            <li onclick="changeName()">✏️ Change Name</li>
         </ul>
     </div>
 
